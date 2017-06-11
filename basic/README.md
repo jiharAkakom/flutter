@@ -13,7 +13,7 @@ runApp(
 );
 }
 ~~~
-![Gambar 1](/Image/1.png)
+![Gambar 1](Image/1.png)
 
 ## STEP 2
 ~~~dart
@@ -36,7 +36,7 @@ class MyStatelessWidget extends StatelessWidget{
     }           
 }               
 ~~~
-![Gambar 1](/Image/2.png)
+![Gambar 1](Image/2.png)
 
 ## Step 3
 ~~~dart
@@ -69,7 +69,7 @@ class MyStatelessWidget extends StatelessWidget{
 }
 ~~~
 
-![Gambar 1](/Image/3.png)
+![Gambar 1](Image/3.png)
 
 ## Step 4 add card
 ~~~dart
@@ -122,7 +122,7 @@ class MyLove extends StatelessWidget {
   }
 }
 ~~~
-![Gambar 1](/Image/4.png)
+![Gambar 1](Image/4.png)
 
 ## Step 5
 ~~~dart
@@ -175,7 +175,7 @@ class MyLove extends StatelessWidget {
   }
 }
 ~~~
-![Gambar 1](/Image/5.png)
+![Gambar 1](Image/5.png)
 
 ## Step 6
 ~~~dart
@@ -237,7 +237,7 @@ class MyLove extends StatelessWidget {
   }
 }
 ~~~
-![Gambar 1](/Image/6.png)
+![Gambar 1](Image/6.png)
 
 ## Step 7 Add Padding
 ~~~dart
@@ -301,7 +301,7 @@ class MyLove extends StatelessWidget {
   }
 }
 ~~~
-![Gambar 1](/Image/7.png)
+![Gambar 1](Image/7.png)
 
 ## Step 8 Add padding in the padding, and Size for icons
 ~~~dart
@@ -368,7 +368,7 @@ class MyLove extends StatelessWidget {
   }
 }
 ~~~
-![Gambar 1](/Image/8.png)
+![Gambar 1](Image/8.png)
 
 ## Step 9 add color icon
 ~~~dart
@@ -377,7 +377,7 @@ class MyLove extends StatelessWidget {
     icon: new Icon(Icons.favorite, size:60.0, color: Colors.redAccent),
 ),
 ~~~
-![Gambar 1](/Image/9.png)
+![Gambar 1](Image/9.png)
 
 ## Step 10 Font Size
 ~~~dart
@@ -387,4 +387,4 @@ title: new Text("I love Muhammad SAW",
     ),
 ),
 ~~~
-![Gambar 1](/Image/10.png)
+![Gambar 1](Image/10.png)
