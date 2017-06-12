@@ -388,3 +388,51 @@ title: new Text("I love Muhammad SAW",
 ),
 ~~~
 ![Gambar 1](Image/10.png)
+## Step 11 Add Drawer.
+~~~dart
+class MyStatelessWidget extends StatelessWidget{
+    var drawer = new Drawer();                                 // New
+    @override
+    Widget build(BuildContext context){
+      return new Scaffold(
+        drawer: drawer,                                        // New
+        appBar: new AppBar(title: new Text("Kancio")),
+        body: new Container(
+          padding:new EdgeInsets.all(10.0) ,
+          child:new Column(
+            crossAxisAlignment: CrossAxisAlignment. stretch,
+            children: <Widget>[
+              new MyLove(
+                title: new Text("I love golang",
+                style: new TextStyle(
+                  fontSize: 20.0
+                ),
+                ),
+                icon: new Icon(Icons.favorite, size:60.0, color: Colors.redAccent),
+              ),
+              new MyLove(
+                title: new Text("I love Islam",
+                style: new TextStyle(
+                  fontSize: 20.0
+                ),
+                ),
+                icon: new Icon(Icons.favorite_border, size:60.0, color: Colors.greenAccent),
+              ),
+              new MyLove(
+                title: new Text("I love Muhammad SAW",
+                style: new TextStyle(
+                  fontSize: 20.0
+                ),
+                ),
+                icon: new Icon(Icons.link, size:60.0, color: Colors.lightBlue),
+              ),
+            ],
+          ),
+        )
+      );
+    }
+}
+~~~
+_______________________________________________________
+|![Gambar 11](Image/11.png)|![Gambar 11](Image/11a.png)|
+_______________________________________________________
