@@ -436,3 +436,196 @@ class MyStatelessWidget extends StatelessWidget{
 _______________________________________________________
 |![Gambar 11](Image/11.png)|![Gambar 11](Image/11a.png)|
 _______________________________________________________
+
+# Step 12 ad Widget
+~~~dart
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(
+    new MaterialApp(
+      home: new MyStatelessWidget()
+    )
+  );
+}
+
+class MyStatelessWidget extends StatelessWidget{
+    @override
+    Widget build(BuildContext context){
+      Column buildButtonColumn(IconData icon, String label) {
+      Color color = Theme.of(context).primaryColor;
+      return new Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          new Icon(icon, color: color),
+          new Container(
+            margin: const EdgeInsets.only(top: 8.0),
+            child: new Text(
+              label,
+              style: new TextStyle(
+                fontSize: 12.0,
+                fontWeight: FontWeight.w400,
+                color: color,
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+      return new Scaffold(
+        appBar: new AppBar(title: new Text("Kancio")),
+        body: new Container(
+          padding:new EdgeInsets.all(10.0) ,
+          child:new Column(
+            crossAxisAlignment: CrossAxisAlignment. stretch,
+            children: <Widget>[
+              new MyStatus(
+                title: new Text("I love golang",
+                  style: new TextStyle(
+                    fontSize: 24.0,
+                  ),
+                ),
+                negoBtn: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    buildButtonColumn(Icons.favorite, 'Suka'),
+                    buildButtonColumn(Icons.comment, 'Komentar'),
+                    buildButtonColumn(Icons.message, 'Nego'),
+                    buildButtonColumn(Icons.add_shopping_cart, 'Beli'),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        )
+      );
+    }
+}
+
+class MyStatus extends StatelessWidget {
+  MyStatus({this.title, this.negoBtn});
+  final Widget title;
+  final Widget negoBtn;
+
+  @override
+  Widget build(BuildContext context){
+    return new Container(
+      padding: new EdgeInsets.only(bottom: 20.0),
+      child: new Card(
+        child: new Container(
+          padding: new EdgeInsets.all(15.0),
+          child: new Column(
+            children: <Widget>[
+              this.title,
+              this.negoBtn,
+            ],
+          ),
+        )
+      ),
+    );
+  }
+}
+~~~
+![Gambar1](Image/12.png)
+
+## Step 15 Add IconButton (Routes and Navigation)
+~~~dart
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(new MaterialApp(
+      home: new HalamanUtama()
+    ));
+}
+
+class HalamanUtama extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+      return new Scaffold(
+        appBar: new AppBar(title: new Text("Kancio"), backgroundColor: Colors.blueAccent,),
+        body: new Container(
+          child: new Center(
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new IconButton(
+                  icon: new Icon(Icons.message, color: Colors.greenAccent),
+                  iconSize: 80.0,
+                  onPressed: null,
+                ),
+                new Text("Halaman Utama")
+              ]
+            )
+          )
+        )
+      );
+  }
+}
+~~~
+![Gambar1](Image/13.png)
+
+### Lanjutan untuk Routes
+~~~ dart
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(new MaterialApp(
+      home: new HalamanUtama(),
+      routes: <String, WidgetBuilder>{                                // new
+          "/chat": (BuildContext context) => new HalamanChat()        // new
+      },                                                              // new
+    ));
+}
+
+class HalamanUtama extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+      return new Scaffold(
+        appBar: new AppBar(title: new Text("Kancio"), backgroundColor: Colors.blueAccent,),
+        body: new Container(
+          child: new Center(
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new IconButton(
+                  icon: new Icon(Icons.message, color: Colors.greenAccent),
+                  iconSize: 80.0,
+                  onPressed: (){Navigator.of(context).pushNamed("/chat");}
+                ),
+                new Text("Halaman Utama")
+              ]
+            )
+          )
+        )
+      );
+  }
+}
+
+
+//new
+class HalamanChat extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+      return new Scaffold(
+        appBar: new AppBar(title: new Text("Chatting"), backgroundColor: Colors.blueAccent,),
+        body: new Container(
+          child: new Center(
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new IconButton(
+                  icon: new Icon(Icons.face, color: Colors.limeAccent),
+                  iconSize: 80.0,
+                  onPressed: null,
+                ),
+                new Text("Halaman Chat")
+              ]
+            )
+          )
+        )
+      );
+  }
+}
+~~~
+![Gambar1](Image/14.png)
